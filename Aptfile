@@ -5,3 +5,9 @@ libxrender1
 libsm6
 libfontconfig1
 libgl1
+libxcb-xinerama0
+libxcomposite1
+libxcursor1
+libxi6
+libxrandr2
+libglib2.0-0

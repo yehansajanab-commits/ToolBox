@@ -6,7 +6,9 @@ from flask import send_from_directory
 from flask_cors import CORS
 import os
 
-from detector import process_image
+# delay importing detector until runtime to avoid hard crash at startup
+# (helps the app start even if system CV libs are missing; errors handled per-request)
+process_image = None
 from database import (
     init_db,
     add_items,
@@ -74,6 +76,14 @@ def api_handover():
     filepath = os.path.join(UPLOAD_FOLDER, image.filename)
     image.save(filepath)
 
+    global process_image
+    if process_image is None:
+        try:
+            from detector import process_image as _proc
+            process_image = _proc
+        except Exception as e:
+            return jsonify({"error": "Image processing unavailable: %s" % str(e)}), 500
+
     box_no, items, segmented_path = process_image(filepath)
     add_items(box_no, items)
 
@@ -101,6 +111,14 @@ def api_receive():
     image = request.files["image"]
     filepath = os.path.join(UPLOAD_FOLDER, image.filename)
     image.save(filepath)
+
+    global process_image
+    if process_image is None:
+        try:
+            from detector import process_image as _proc
+            process_image = _proc
+        except Exception as e:
+            return jsonify({"error": "Image processing unavailable: %s" % str(e)}), 500
 
     box_no, items, segmented_path = process_image(filepath)
     stored = get_items(box_no)
