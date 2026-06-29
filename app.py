@@ -52,16 +52,6 @@ def api_boxes():
     })
 
 
-@app.route("/api/inventory")
-def api_inventory():
-    rows = get_all_boxes()
-    data = {}
-
-    for box_no, item in rows:
-        data.setdefault(box_no, []).append(item)
-
-    return jsonify(data)
-
 
 #######################################################
 # HANDOVER
