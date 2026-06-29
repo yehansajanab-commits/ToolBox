@@ -1,4 +1,5 @@
 Flask
+Flask-Cors
 ultralytics
 opencv-python-headless
 pyzbar
