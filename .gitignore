@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+env/
+venv/
+.venv/
+
+# Databases
+toolbox.db
+*.db
+
+# Uploads and logs
+uploads/
+logs/
+
+# Model weights and large binaries
+*.pt
+*.pth
+*.model
+
+# IDE / editor
+.vscode/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node/Vercel
+node_modules/
+.vercel/
+
+# Python environment
+pip-wheel-metadata/

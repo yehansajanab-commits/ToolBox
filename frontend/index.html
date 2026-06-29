@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToolBox App</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header>
+      <div>
+        <h1>ToolBox App</h1>
+        <p>Handover, receive, and inventory with mobile camera upload.</p>
+      </div>
+      <nav>
+        <button data-section="dashboard" class="active">Dashboard</button>
+        <button data-section="handover">Handover</button>
+        <button data-section="receive">Receive</button>
+        <button data-section="inventory">Inventory</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="dashboard" class="panel active">
+        <h2>Dashboard</h2>
+        <div class="stats-grid">
+          <article>
+            <h3>Boxes</h3>
+            <strong id="boxCount">-</strong>
+          </article>
+          <article>
+            <h3>Items</h3>
+            <strong id="itemCount">-</strong>
+          </article>
+        </div>
+        <p>Use the controls below to upload handover or receive images.</p>
+      </section>
+
+      <section id="handover" class="panel">
+        <h2>Handover</h2>
+        <form id="handoverForm">
+          <label for="handoverImage">Take a photo or choose an image:</label>
+          <input id="handoverImage" name="image" type="file" accept="image/*" capture="environment" required />
+          <button type="submit">Submit Handover</button>
+        </form>
+        <div id="handoverResult" class="result-box"></div>
+      </section>
+
+      <section id="receive" class="panel">
+        <h2>Receive</h2>
+        <form id="receiveForm">
+          <label for="receiveImage">Take a photo or choose an image:</label>
+          <input id="receiveImage" name="image" type="file" accept="image/*" capture="environment" required />
+          <button type="submit">Submit Receive</button>
+        </form>
+        <div id="receiveResult" class="result-box"></div>
+      </section>
+
+      <section id="inventory" class="panel">
+        <h2>Inventory</h2>
+        <div id="inventoryList" class="inventory-list"></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

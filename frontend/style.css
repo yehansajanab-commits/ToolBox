@@ -1,0 +1,180 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.app-shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+header {
+  display: grid;
+  gap: 16px;
+}
+
+header h1 {
+  margin: 0 0 4px;
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+}
+
+header p {
+  margin: 0;
+  color: #94a3b8;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav button {
+  flex: 1;
+  min-width: 140px;
+  border: none;
+  border-radius: 14px;
+  background: #1e293b;
+  color: #f8fafc;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+nav button.active,
+nav button:hover {
+  background: linear-gradient(135deg, #38bdf8, #2563eb);
+  transform: translateY(-1px);
+}
+
+main {
+  margin-top: 24px;
+}
+
+.panel {
+  display: none;
+}
+
+.panel.active {
+  display: block;
+}
+
+.stats-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.stats-grid article,
+.result-box,
+.inventory-list {
+  background: #14213d;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+article h3 {
+  margin: 0 0 12px;
+  color: #38bdf8;
+  font-size: 1rem;
+}
+
+article strong {
+  display: block;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+label {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+input[type="file"] {
+  border-radius: 14px;
+  background: #0f172a;
+  border: 1px solid #334155;
+  padding: 16px 12px;
+  color: #e2e8f0;
+}
+
+button[type="submit"] {
+  border: none;
+  border-radius: 14px;
+  padding: 14px 18px;
+  background: #22c55e;
+  color: #0f172a;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.result-box p,
+.inventory-item p {
+  margin: 0 0 12px;
+  line-height: 1.6;
+}
+
+.result-box img {
+  width: 100%;
+  border-radius: 16px;
+  margin-top: 14px;
+}
+
+.inventory-card {
+  margin-bottom: 14px;
+  padding: 18px;
+  border-radius: 18px;
+  background: #0f172a;
+  border: 1px solid #334155;
+}
+
+.inventory-card h3 {
+  margin: 0 0 10px;
+}
+
+.inventory-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.inventory-card li {
+  margin-bottom: 8px;
+}
+
+.clear-button {
+  margin-top: 16px;
+  background: #ef4444;
+  color: white;
+}
+
+@media (max-width: 640px) {
+  nav {
+    flex-direction: column;
+  }
+}
