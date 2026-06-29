@@ -7,7 +7,7 @@ This folder contains a static frontend for the ToolBox API. It is ready to deplo
 1. Update `frontend/config.js`:
    - Replace `window.API_BASE` with your Railway backend URL, for example:
      ```js
-     window.API_BASE = "https://web-production-ebbf7.up.railway.app/";
+     window.API_BASE = "https://web-production-ebbf7.up.railway.app";
      ```
 
 2. Deploy the `frontend/` folder to Vercel as a static site.
