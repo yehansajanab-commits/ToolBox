@@ -1,1 +1,1 @@
-window.API_BASE = "https://your-railway-backend.up.railway.app";
+window.API_BASE = "http://127.0.0.1:5000";
